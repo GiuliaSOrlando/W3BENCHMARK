@@ -422,6 +422,9 @@ console.log('Esercizio 16: ', sumAllTheYears(onlyTheYears(movies)))
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
 
+/* Questa è la mia soluzione al 17^ esercizio. Mi sembra corretta a livello logico, ma la console continua a dirmi
+che non può utilizzare includes su qualcosa di undefined.
+
 const searchByTitle = (str, arr) => {
   return arr.filter(movie => movie.Title.includes(str))
 }
@@ -433,6 +436,20 @@ console.log('Esercizio 17: ', searchByTitle('flies', movies))
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
 
+/* Per la stessa ragione dell'esercizio 17, non riesco a rendere funzionante la funzione di questo esercizio*
+
+const searchAndDivide = (str, arr) => {
+  const matched = []
+  matched.push(arr.filter(movie => movie.Title.includes(str)))
+  const unmatched = []
+  unmatched.push(arr.filter(movie => !movie.Title.includes(str)))
+  myObj = {...matched,...unmatched}
+}
+
+searchAndDivide('lord', movies)
+
+console.log(myObj) */
+
 
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
@@ -442,7 +459,7 @@ const removeIndex = (n) => {
   const remove = movies.filter((el) => movies.indexOf(el) !== n)
   return remove
 }
-console.log(removeIndex(12))
+console.log('Esercizio 19: ', removeIndex(12))
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
@@ -462,12 +479,17 @@ getbyID('container')
 */
 
 const addTdtoAll = () => {
-  
+  const allTheTags = document.getElementsByTagName('td')
+  return allTheTags
 }
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
+
+ const printTheTable = () => {
+
+ }
 
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
@@ -554,3 +576,12 @@ const tree = (numRow) => {
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+
+const isPrime = num => {
+  for(let i=2, s=Math.sqrt(num); i <= s; i++) {
+      if(num % i === 0) return false
+  }
+  return num > 1
+}
+
+console.log(isPrime(9973))
