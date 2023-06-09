@@ -479,8 +479,8 @@ getbyID('container')
 */
 
 const addTdtoAll = () => {
-  const allTheTags = document.getElementsByTagName('td')
-  return allTheTags
+  const allTheTDTags = document.getElementsByTagName('td')
+  return allTheTDTags
 }
 
 /* ESERCIZIO 22
@@ -488,7 +488,10 @@ const addTdtoAll = () => {
 */
 
  const printTheTable = () => {
-
+    let allTheTDTags = Array.from(document.getElementsByTagName('td'))
+    allTheTDTags.forEach((el)=> console.log(el.innerText))
+    // se qualche TD avesse display: none, potrebbe essere utile invece procedere così
+    allTheTDTags.forEach((el)=> console(el.textContent))
  }
 
 /* ESERCIZIO 23
