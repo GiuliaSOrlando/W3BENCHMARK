@@ -568,8 +568,8 @@ console.log(halfTree(7))
 */
 
 const tree = (numRow) => {
-  for (let i = 1; i <= numRow; i++) {
-    console.log(" ".repeat(numRow - i) + "*".repeat(2 * i - 1));
+  for (let i=1; i<=numRow; i++) {
+    console.log(" ".repeat(numRow - i) + "*".repeat(2 * i - 1))
   }
 }
 
