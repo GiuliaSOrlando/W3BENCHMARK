@@ -587,4 +587,4 @@ const isPrime = num => {
   return num > 1
 }
 
-console.log(isPrime(9973))
+console.log('Esercizio 29: ', isPrime(9973))
